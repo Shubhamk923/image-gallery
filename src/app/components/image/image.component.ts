@@ -118,7 +118,7 @@ export class ImageComponent implements OnInit {
 constructor(private api:ApicallService){}
 
 mountain:any;
-error:any;
+error?:any
 
 ngOnInit(): void {
   this.mountain = this.api.getdata().subscribe((data:any)=>{
@@ -127,9 +127,8 @@ ngOnInit(): void {
   },error =>{
     this.error = error;
     console.error(`Error ${error}`);
-
-  })
-  console.log(this.mountain);
+  });
+  // console.log(this.mountain);
 }
 
 

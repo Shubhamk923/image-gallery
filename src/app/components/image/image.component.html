@@ -175,45 +175,25 @@
     </div> -->
 <!-- </div> -->
 
-<div id="s1"  class="container flex-direction-md-column">
+
+
+<div id="s1"  class="container d-flex flex-md-column">
     <div *ngIf="error" class="error">
         <h1 class="text-danger text-center my-2">{{error}}</h1>
     </div>
     <div class="row gap-2 gap-md-0 justify-content-center">
-        <div class="col-md-3 h-25 my-3" *ngFor="let m of mountain | namepipe : searchText; let i = index">
+        <div class="col-md-3 h-25 my-3" *ngFor="let m of mountain | namepipe : searchText;">
             <div class="card">
                 <div class="card-header bg-black text-light">
                     <h1 style="text-align: center;">{{m.name}}</h1>
                 </div>
                 <div id="img1" class="card-body bg-black">
-                    <a href="{{'#modal'+i}}" data-bs-toggle="modal">
-                    <img src="{{m.img}}" alt="img1">
-                    </a>
+                <img src="{{m.img}}" alt="img1">
             </div>
             <div class="card-footer bg-black text-light">
                 <a href="{{m.footer}}" class="cv" download="CV"><input type="Button"
                     value="DOWNLOAD" style="width: 100%;"></a>
             </div>
-            </div>
-        </div>
-    </div>
-</div>
-
-
-
-<div class="modal fade" id="{{'modal'+i}}" data-bs-backdrop="static">
-    <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-fullscreen-md-down">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h1 class="modal-title"></h1>
-                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
-            </div>
-            <div class="modal-body">
-                <img [src]="m.footer" alt="img" width="100%" height="200px" class="rounded-3">
-            </div>
-            <div class="modal-footer d-flex align-items-center justify-content-center">
-                <a href="{{m.footer}}" class="cv" download="CV"><input type="Button"
-                    value="DOWNLOAD" style="width: 100%;"></a>
             </div>
         </div>
     </div>

@@ -17,6 +17,7 @@ export class ApicallService {
 
     let errorMessage = "Something went wrong...";
 
-    return throwError(errorMessage)
+    return throwError(errorMessage);
   }
+  
 }
