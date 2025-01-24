@@ -121,14 +121,21 @@ mountain:any;
 error?:any
 
 ngOnInit(): void {
-  this.mountain = this.api.getdata().subscribe((data:any)=>{
-    console.log(data);
-    this.mountain = data;
-  },error =>{
-    this.error = error;
-    console.error(`Error ${error}`);
-  });
+  // this.mountain = this.api.getdata().subscribe((data:any)=>{
+  //   console.log(data);
+  //   this.mountain = data;
+  // },error =>{
+  //   this.error = error;
+  //   console.error(`Error ${error}`);
+  // });
   // console.log(this.mountain);
+
+  this.mountain = this.api.getdata()
+
+  // this.mountain = this.api.getdata().subscribe((data:any)=>{
+  //   console.log(data);
+  //   this.mountain = data;
+  // })
 }
 
 
